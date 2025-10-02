@@ -1,0 +1,39 @@
+{
+  "name": "openai-product-description",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
+  "cacheDirectories": [
+    "node_modules"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "NODE_ENV=test jest --passWithNoTests --runInBand",
+    "test:watch": "NODE_ENV=test jest --watch",
+    "dev": "export NODE_ENV=dev && npm run build && nodemon ./index.ts ",
+    "debug-wipe": "NODE_ENV=debug && npm run build-test  && npm run build && nodemon ./index.ts",
+    "start": "NODE_ENV=production && ts-node ./dist/index.js",
+    "tsc": "tsc",
+    "postinstall": "npm run tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^16.4.5",
+    "firebase": "^12.3.0",
+    "openai": "^6.0.0",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0",
+    "@types/jest": "^30.0.0",
+    "ts-jest": "29.4.4",
+    "@types/restify": "^8.5.1",
+    "@types/restify-errors": "^4.3.3",
+    "mocha": "^8.2.1",
+    "nodemon": "^2.0.22"
+  }
+}
