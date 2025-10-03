@@ -1,6 +1,5 @@
 // tests/system.test.ts
 import dotenv from "dotenv";
-import MLProductPrediction from "../src/models";
 dotenv.config();
 
 describe("System Checks", () => {

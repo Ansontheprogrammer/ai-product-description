@@ -9,7 +9,7 @@ export interface PromptSettings {
 }
 
 /// This is the base class for OpenAI interactions.
-export class OpenAIInterface {
+export abstract class OpenAIInterface {
   protected abstract generateAIResponse(
     settings: PromptSettings
   ): Promise<string>;
