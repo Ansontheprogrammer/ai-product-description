@@ -4,7 +4,7 @@ import MLProductPrediction from "../src/models";
 dotenv.config();
 
 describe("System Checks", () => {
-  it.only("should make a request to OpenAI using model 4.1.0", async () => {
+  it("should make a request to OpenAI using model 4.1.0", async () => {
     jest.unmock("openai"); // <- Bypass the mock for this test
     const OpenAI = (await import("openai")).default; // Import after unmocking
 
