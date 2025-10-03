@@ -1,4 +1,4 @@
-# OpenAI Product Description Manager
+# AI Product Description
 
 ## 📖 Description
 
@@ -8,8 +8,6 @@ It can be used with **any sales platform** — Shopify, WooCommerce, custom stor
 - Generates AI-powered product descriptions.
 - Stores descriptions per store in Firestore.
 - Enforces daily usage limits per store.
-
-**Disclaimer:** This package is **not published or endorsed by OpenAI**. It is an independent project that uses OpenAI's API.
 
 ---
 

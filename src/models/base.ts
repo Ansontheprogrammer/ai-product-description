@@ -1,22 +1,12 @@
-import * as dotenv from "dotenv";
-import { OpenAI } from "openai";
-
 export interface IPromptSettings {
   title: string;
   description?: string;
   customRequest?: string;
 }
-
-dotenv.config();
-
-export abstract class OpenAIInterface {
-  private openai: OpenAI;
-  constructor() {
-    this.openai = new OpenAI({
-      apiKey: process.env.OPENAI_API_KEY,
-    });
-  }
-  private generateProductDescriptionPrompt(
+export abstract class BaseMLProductDescription {
+  abstract initializeClient(): void;
+  abstract generateAIResponse(promptSettings: IPromptSettings): Promise<string>;
+  protected generateProductDescriptionPrompt(
     promptSettings: IPromptSettings
   ): string {
     let prompt = `You are a Shopify assistant that writes product descriptions in Remix React JSX. 
@@ -45,32 +35,5 @@ Use varied sentence structure and synonyms to avoid repetition. Produce output e
     }
 
     return prompt;
-  }
-
-  protected async generateAIResponse(
-    promptSettings: IPromptSettings
-  ): Promise<string> {
-    try {
-      const response = await this.openai.chat.completions.create({
-        model: "gpt-4.1",
-        messages: [
-          {
-            role: "system",
-            content:
-              "You are a helpful assistant that writes short product descriptions.",
-          },
-          {
-            role: "user",
-            content: this.generateProductDescriptionPrompt(promptSettings),
-          },
-        ],
-        max_completion_tokens: 1000,
-      });
-
-      return response.choices?.[0]?.message?.content ?? "";
-    } catch (error) {
-      console.error("Error generating AI response:", error);
-      throw error;
-    }
   }
 }

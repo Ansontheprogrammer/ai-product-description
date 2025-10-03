@@ -1,3 +1,2 @@
-import { DescriptionModel } from "./db/descriptions";
-
-export default new DescriptionModel();
+import mlProductPrediction from "./models/";
+export default new mlProductPrediction();

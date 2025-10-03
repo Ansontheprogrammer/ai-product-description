@@ -1,7 +1,7 @@
 {
-  "name": "openai-product-description",
+  "name": "ai-product-description",
   "version": "1.0.0",
-  "description": "",
+  "description": "## 📖 Description",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
   "cacheDirectories": [
@@ -17,8 +17,8 @@
     "tsc": "tsc",
     "postinstall": "npm run tsc"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "AnsonErvin Inc.",
+  "license": "Apache-2.0",
   "dependencies": {
     "axios": "^0.21.1",
     "dotenv": "^16.4.5",
@@ -35,5 +35,25 @@
     "@types/restify-errors": "^4.3.3",
     "mocha": "^8.2.1",
     "nodemon": "^2.0.22"
-  }
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ansontheprogrammer/openai-product-description.git"
+  },
+  "keywords": [
+    "ai",
+    "product",
+    "description",
+    "openai",
+    "model",
+    "gpt",
+    "chatgpt"
+  ],
+  "bugs": {
+    "url": "https://github.com/Ansontheprogrammer/openai-product-description/issues"
+  },
+  "homepage": "https://github.com/Ansontheprogrammer/openai-product-description#readme"
 }
