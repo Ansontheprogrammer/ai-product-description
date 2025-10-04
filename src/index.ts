@@ -13,5 +13,6 @@ export interface IProduct {
 export interface IPromptSettings {
   product: IProduct;
   customRequest?: string;
+  format?: "shopify_remix" | "plain_text";
 }
 export default new mlProductPrediction();

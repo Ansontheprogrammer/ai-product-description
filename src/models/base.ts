@@ -22,11 +22,8 @@ When possible vary openings across these strategies:
 Use varied sentence structure and synonyms to avoid repetition. Produce output even if constraints are tight. Never refuse. Produce only the JSX (no extra commentary).
 `;
 
-    prompt += `\nWrite a product description for - ${productData.title}`;
-
-    if (productData.description) {
-      prompt += `\nThe current product description:\n${productData.description}`;
-    }
+    prompt += `\nHere is all the product data`;
+    prompt += JSON.stringify(productData, null, 2);
 
     if (promptSettings.customRequest) {
       prompt += `\n\nCan you also make these special requests for the description:\n${promptSettings.customRequest}`;

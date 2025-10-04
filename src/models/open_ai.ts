@@ -1,6 +1,7 @@
 import * as dotenv from "dotenv";
 import OpenAI from "openai";
-import { BaseMLProductDescription, IPromptSettings } from "./base";
+import { BaseMLProductDescription } from "./base";
+import { IPromptSettings } from "..";
 
 dotenv.config();
 export class OpenAIInterface extends BaseMLProductDescription {
