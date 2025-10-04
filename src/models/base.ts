@@ -1,14 +1,12 @@
-export interface IPromptSettings {
-  title: string;
-  description?: string;
-  customRequest?: string;
-}
+import { IPromptSettings } from "..";
+
 export abstract class BaseMLProductDescription {
   abstract initializeClient(): void;
   abstract generateAIResponse(promptSettings: IPromptSettings): Promise<string>;
   protected generateProductDescriptionPrompt(
     promptSettings: IPromptSettings
   ): string {
+    const productData = promptSettings.product;
     let prompt = `You are a Shopify assistant that writes product descriptions in Remix React JSX. 
 Output must be valid JSX that Shopify can save. Wrap everything in <BlockStack gap="300">. 
 Use <h3> for the headline, <Text as='p'> for the 2-sentence intro, and <ul>/<li> for the feature bullets. 
@@ -24,10 +22,10 @@ When possible vary openings across these strategies:
 Use varied sentence structure and synonyms to avoid repetition. Produce output even if constraints are tight. Never refuse. Produce only the JSX (no extra commentary).
 `;
 
-    prompt += `\nWrite a product description for - ${promptSettings.title}`;
+    prompt += `\nWrite a product description for - ${productData.title}`;
 
-    if (promptSettings.description) {
-      prompt += `\nThe current product description:\n${promptSettings.description}`;
+    if (productData.description) {
+      prompt += `\nThe current product description:\n${productData.description}`;
     }
 
     if (promptSettings.customRequest) {

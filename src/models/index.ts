@@ -1,3 +1,4 @@
+import { IPromptSettings } from "..";
 import { BaseMLProductDescription } from "./base";
 import { OpenAIInterface } from "./open_ai";
 
@@ -7,11 +8,7 @@ export default class MLProductPrediction {
     this.openaiAPI = new OpenAIInterface();
   }
   public async generateProductDescription(
-    promptSettings: {
-      title: string;
-      description?: string;
-      customRequest?: string;
-    }, /// will be the familiar model family like "gpt1"
+    promptSettings: IPromptSettings, /// will be the familiar model family like "gpt1"
     modelSet: string = "gpt"
   ): Promise<string> {
     if (modelSet !== "gpt") {
