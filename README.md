@@ -22,6 +22,7 @@ Create a .env file in your project root:
 
 ```
 OPENAI_API_KEY=your_openai_key
+```
 
 # 🚀 Usage
 
@@ -61,4 +62,7 @@ Works with any sales platform or frontend.
 This is backend only; users must provide their own frontend.
 
 Make sure Firebase and OpenAI credentials are configured correctly.
+
+```
+
 ```
