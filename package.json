@@ -1,6 +1,6 @@
 {
   "name": "ai-product-description",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "## 📖 Description",
   "main": "dist/src/index.js",
   "types": "dist/src/index.d.ts",
