@@ -1,5 +1,4 @@
 import { IPromptSettings } from "..";
-import { BaseMLProductDescription } from "./base";
 import { OpenAIInterface } from "./open_ai";
 
 export default class MLProductPrediction {
